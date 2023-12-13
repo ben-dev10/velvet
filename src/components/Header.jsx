@@ -1,12 +1,7 @@
-// import { Sun } from "lucide-react";
 import logo from "/logo.svg";
 import Sheet from "./ui/Sheet";
-
-// Updates theme
-document.addEventListener("DOMContentLoaded", function () {
-  const savedTheme = localStorage.getItem("theme") || "light";
-  document.documentElement.classList.add(savedTheme);
-});
+import bagIcon from "../assets/bag.svg";
+// import { ShoppingBag } from "lucide-react";
 
 function Logo() {
   return (
@@ -18,7 +13,7 @@ function Logo() {
 
 function Links() {
   return (
-    <div className="space-x-3 text-accent">
+    <div className="space-x-3 text-accent hidden md:block">
       <a href="#" className="hover:underline">
         Github
       </a>
@@ -28,27 +23,6 @@ function Links() {
     </div>
   );
 }
-
-/* ------------- disabled for now ------------ */
-// function ThemeToggle() {
-//   function handleToggleTheme() {
-//     const currentTheme = document.documentElement.classList.contains("light")
-//       ? "light"
-//       : "dark";
-
-//     const newTheme = currentTheme === "light" ? "dark" : "light";
-
-//     localStorage.setItem("theme", newTheme);
-//     document.documentElement.classList.remove(currentTheme);
-//     document.documentElement.classList.add(newTheme);
-//   }
-
-//   return (
-//     <div className="ml-auto p-1 rounded-full hover:bg-gray-50 dark:hover:bg-neutral-700">
-//       <Sun size={18} strokeWidth={2} id="toggle" onClick={handleToggleTheme} />
-//     </div>
-//   );
-// }
 
 function MenuIcon() {
   function handleBodyStylesAndSheetVisibility() {
@@ -124,10 +98,14 @@ function MenuIcon() {
 
 export default function Header() {
   return (
-    <div className="wrapper max-w-4xl mx-auto w-full flex gap-x-3 items-center h-[26px]">
-      <MenuIcon />
-      <Logo />
-      <Links />
+    <div className="wrapper container-4xl w-full ">
+      <div className="flex gap-x-3 items-center rounded bg-white/90 backdrop-blur-[40px] px-3 py-2 md:py-3 md:rounded-md">
+        <MenuIcon />
+        <Logo />
+        <Links />
+        <img src={bagIcon} className="w-[18px] md:hidden" alt="bag icon" />
+        {/* <ShoppingBag size={18} className=""/> */}
+      </div>
     </div>
   );
 }

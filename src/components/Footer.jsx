@@ -88,7 +88,7 @@ function PC() {
 
 export default function Footer() {
   return (
-    <div className="wrapper max-w-4xl mx-auto">
+    <div className="wrapper container-4xl">
       <Mobile />
       <PC />
     </div>

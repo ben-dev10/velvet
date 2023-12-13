@@ -21,8 +21,8 @@
   /* light mode */
   :root {
     --accent: #5E43C2;
-    --background-primary: #fff;
-    --background-secondary: #f4f5ff;
+    --background-primary: #f4f5ff;
+    --background-secondary: #fff;
     --text-primary: #6B7280;
     /* body text */
     --text-secondary: #1F2937;
@@ -61,6 +61,10 @@
 }
 
 
+.container-4xl {
+  @apply mx-auto max-w-4xl
+}
+
 .h1 {
   @apply text-24 font-extrabold
 }
@@ -71,6 +75,10 @@
 
 .h3 {
   @apply text-18 font-extrabold
+}
+
+.h4 {
+  @apply text-16 font-extrabold
 }
 
 .container-4xl {
