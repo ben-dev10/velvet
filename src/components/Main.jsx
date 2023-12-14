@@ -1,4 +1,6 @@
 import { BarChart, BringToFront } from "lucide-react";
+import Carousel from "./ui/carousel/carousel";
+// import Carousel from "./ui/carousel/carousel";
 
 function Hero() {
   return (
@@ -19,8 +21,8 @@ function Hero() {
         </div>
       </div>
 
-      <div className="hero-carousel bg-accent/50 aspect-[1/1] w-full md:max-h-[350px]">
-        <p className="p-2">img carousel</p>
+      <div className="hero-carousel flex items-center bg-accent/50 aspect-[1/1] w-full max-h-[200px] sm:max-h-[300px]  md:max-h-[350px]">
+        <Carousel />
       </div>
     </div>
   );
@@ -227,13 +229,6 @@ function Newsletter() {
     </div>
   );
 }
-
-// function BrandsRow() {
-//   return (
-//     <div className=""></div>
-//   );}
-//
-
 export default function Main() {
   return (
     <>

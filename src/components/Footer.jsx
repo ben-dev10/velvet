@@ -28,7 +28,7 @@ function Link({ text, className, children, url = "#" }) {
 
 function Mobile() {
   return (
-    <div className="mobile md:hidden">
+    <div className="mobile md:hidden pb-[70px]">
       <Copyright />
       <div className="mobile-links flex flex-col px-3">
         <Link text="Product" />

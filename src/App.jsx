@@ -6,7 +6,7 @@ import Sheet from "./components/ui/Sheet";
 function App() {
   return (
     <>
-      <header className="flex p-4 pt-3 sticky top-0 bg-transparent">
+      <header className="flex p-4 pt-3 sticky z-[999] top-0 bg-transparent">
         <Header />
         <Sheet />
       </header>
