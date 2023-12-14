@@ -1,6 +1,16 @@
-import { BarChart, BringToFront } from "lucide-react";
+/* eslint-disable react/prop-types */
+import { ArrowUpRightIcon, BarChart, BringToFront, Network } from "lucide-react";
 import Carousel from "./ui/carousel/carousel";
-// import Carousel from "./ui/carousel/carousel";
+import womanImg from "../assets/cosmetics/woman-cosmetic.png";
+import cosmetic1 from "../assets/cosmetics/cosmetic (1).png";
+import cosmetic2 from "../assets/cosmetics/cosmetic (2).png";
+import cosmetic4 from "../assets/cosmetics/cosmetic (4).png";
+import cosmetic6 from "../assets/cosmetics/cosmetic (6).png";
+import lucia from "../assets/cosmetics/natural-beauty.png";
+import rauch from "../assets/avatars/rauch.png";
+import lee from "../assets/avatars/lee.png";
+import simon from "../assets/avatars/simon.png";
+import steven from "../assets/avatars/steven.png";
 
 function Hero() {
   return (
@@ -8,20 +18,20 @@ function Hero() {
       <div className="hero-texts my-3 order-1 md:order-none md:self-center">
         <p className="italic">best products for skin care</p>
         <h1 className="h1">Velvet Cosmetics Limited</h1>
-        <p className="">
+        <p className="md:pr-8">
           We produce and sell an array of award-winning cosmetics for hair and
           skin.
         </p>
         <div className="mt-2">
           <a href="#" className="">
-            <button className="px-2 py-1 rounded-full bg-accent text-white">
-              Learn more
+            <button className="flex items-center px-3 py-[6px] rounded-full bg-accent text-white">
+              Learn more <ArrowUpRightIcon size={14} className="ml-1" />
             </button>
           </a>
         </div>
       </div>
 
-      <div className="hero-carousel flex items-center bg-accent/50 aspect-[1/1] w-full max-h-[200px] sm:max-h-[300px]  md:max-h-[350px]">
+      <div className="relative hero-carousel flex items-center justify-center {bg-accent/50} aspect-[1/1] w-full max-h-[260px] sm:max-h-[300px] md:max-w-[400px]  md:max-h-[350px]">
         <Carousel />
       </div>
     </div>
@@ -40,10 +50,9 @@ function BrandsRow() {
   );
 }
 
-// eslint-disable-next-line react/prop-types
 function StatsIcon({ children, number, text }) {
   return (
-    <div className="flex">
+    <div className="flex shrink-0">
       <div className="p-2 mr-3 text-accent bg-white rounded-md flex h-max self-center">
         {children}
       </div>
@@ -64,7 +73,7 @@ function Mission() {
             <span className="w-[6px] white-asset h-[24px] rounded-tr-[6px] rounded-br-[6px] bg-white inline-block border translate-y-[4px]"></span>
             <span className="ml-3">Our Mission</span>
           </h2>
-          <div className="md:max-w-[500px] space-y-2 px-4 pl-7">
+          <div className="md:max-w-[500px] space-y-2 px-4 pl-7 md:px-10 md:mt-4">
             <p>
               <span className="pl-2 mr-1">At</span>
               <span className="text-cyan-300">Velvet</span>, we are committed to
@@ -75,33 +84,37 @@ function Mission() {
               <span className="pl-2">Thus</span> we continue to provide more new
               products based on customer feedback all at unbeatable prices.
             </p>
-            <div className="stats-group flex flex-col md:flex-row gap-3 !mt-4">
+            <div className="stats-group flex flex-col md:flex-row gap-3 !mt-4 !mb-4 flex-wrap">
               <StatsIcon number="50,000+" text="Satisfied Customers">
                 <BringToFront size={20} className="shrink-0 " />
               </StatsIcon>
               <StatsIcon number="4M+" text="Completed Transactions">
                 <BarChart size={20} className="shrink-0 " />
               </StatsIcon>
+              <StatsIcon number="50M+" text="Total Customers">
+                <Network size={20} className="shrink-0 " />
+              </StatsIcon>
             </div>
           </div>
         </div>
-        <div className=" w-full p-4">
-          <div className="bg-blue-500 h-full p-2 rounded">img</div>
+        <div className=" w-full p-4 flex justify-center">
+          <div className="bg-blue-50 h-full p-2 rounded sm:max-w-[350px]">
+            <img src={womanImg} alt="" className="object-cover " />
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-// eslint-disable-next-line react/prop-types
 function Card({ imgUrl, productName, description, price }) {
   return (
-    <div className="card flex flex-col shrink-0 w-[200px] h-[280px] bg-white p-3 rounded-md">
+    <div className="card flex flex-col shrink-0 w-[200px] h-[280px] bg-white p-3 rounded-md shadow-md shadow-blue-100/50">
       <div className="head mb-2">
         <img
           src={imgUrl}
           alt=""
-          className="w-full h-[150px] rounded-md object-cover"
+          className="w-full h-[150px] rounded-md object-contain"
         />
       </div>
       <div className="body grow flex flex-col">
@@ -109,7 +122,7 @@ function Card({ imgUrl, productName, description, price }) {
         <p className="text-gray-500">{description}</p>
         <div className="flex mt-auto">
           <div className="price font-bold mr-auto text-[13px]">{price}</div>
-          <button className="bg-accent text-blue-50 px-2 rounded-full">
+          <button className="bg-accent text-blue-50 px-4 py-[3px] rounded-full">
             Buy
           </button>
         </div>
@@ -120,37 +133,54 @@ function Card({ imgUrl, productName, description, price }) {
 
 function Catalogue() {
   return (
-    <div className="catalogue flex flex-col items-center px-4 my-[50px]">
+    <div className="catalogue flex flex-col items-center px-4 my-[25px] mb-[50px]">
       <h2 className="h2 mb-3">Our Catalogue</h2>
       <div className="flex gap-4 max-w-full overflow-y-auto">
         <Card
-          imgUrl=""
+          imgUrl={cosmetic1}
           productName="Velvet Crisp"
           description="Our best-selling spray. Suitable for ladies & gents."
           price="140$"
         />
         <Card
-          imgUrl=""
+          imgUrl={cosmetic2}
           productName="Velvet Luxure"
           description="Simple yet elegant."
           price="120$"
+        />
+        <Card
+          imgUrl={cosmetic4}
+          productName="Alastin Skincare"
+          description="Our least expensive, but don't be fooled!"
+          price="50$"
+        />
+        <Card
+          imgUrl={cosmetic6}
+          productName="Rejuvity"
+          description="A pack of premium goodness for smooth skin"
+          price="250$"
         />
       </div>
     </div>
   );
 }
 
-// eslint-disable-next-line react/prop-types
-function MiniTestimonialCard({ userName, city, testimony, isSpecial = false }) {
+function MiniTestimonialCard({
+  userName,
+  url,
+  city,
+  testimony,
+  isSpecial = false,
+}) {
   return (
     <div
-      className={`mini-testimonial-card shrink-0 border flex flex-col w-[180px] h-[150px] rounded-lg ${
+      className={`mini-testimonial-card shrink-0 border pt-2 flex flex-col w-[180px] h-[150px] rounded-lg ${
         isSpecial ? "bg-accent text-white" : " "
       }`}
     >
       <div className="head flex items-center">
         <img
-          src="user-img"
+          src={url}
           alt="testimonial-avatar"
           className="w-[32px] h-[32px] rounded-full border m-2"
         />
@@ -162,8 +192,8 @@ function MiniTestimonialCard({ userName, city, testimony, isSpecial = false }) {
         </div>
       </div>
 
-      <div className="body p-2">
-        <p className={`${isSpecial ? "text-white/70" : "text-gray-500"}`}>
+      <div className="body p-2 px-3">
+        <p className={`${isSpecial ? "text-white/80" : "text-gray-500"}`}>
           {testimony}
         </p>
       </div>
@@ -177,9 +207,13 @@ function Testimonials() {
       <div className="testimonials gap-4 flex flex-col items-center">
         <h2 className="h2 text-center">What Our Customers Say</h2>
 
-        <div className="main-testimonial overflow-hidden max-w-[450px] h-[115px] border p-2 flex bg-white shadow-lg shadow-slate-100 rounded-md">
-          <div className="img">
-            <img src="" alt="" className="w-[120px] object-cover rounded-md" />
+        <div className="main-testimonial overflow-hidden max-w-[450px] h-[135px] border p-2 flex bg-white shadow-lg shadow-slate-100 rounded-md">
+          <div className="img shrink-0 h-[100%] mr-4">
+            <img
+              src={lucia}
+              alt=""
+              className="w-[120px] object-cover rounded-md h-[100%]"
+            />
           </div>
           <div className="">
             <h4 className="h4">Lucia</h4>
@@ -193,15 +227,29 @@ function Testimonials() {
 
         <div className="mini-testimonials flex gap-3 w-full overflow-x-auto px-3 mt-3">
           <MiniTestimonialCard
+            url={lee}
             userName="Leonardo Davinci"
             city="New York"
-            testimony="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptate?"
+            testimony="Velvet is the best cosmetics company in the world!"
           />
           <MiniTestimonialCard
+            url={simon}
             isSpecial={true}
-            userName="Leonardo Davinci"
-            city="New York"
-            testimony="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptate?"
+            userName="BestBrain246"
+            city="Kasoa"
+            testimony="I know creams aren't for animals but I was surprised to see my cat's fur turning white"
+          />
+          <MiniTestimonialCard
+            url={steven}
+            userName="John Wick"
+            city="Kentucky"
+            testimony="I love good products, that's why I love Velvet"
+          />
+          <MiniTestimonialCard
+            url={rauch}
+            userName="Marvin"
+            city="Lagos"
+            testimony="If you want the best products for your skin, try Velvet's collection of cosmetics"
           />
         </div>
       </div>
@@ -240,7 +288,7 @@ export default function Main() {
         <Mission />
       </div>
       <Catalogue />
-      <div className="testimonials bg-white">
+      <div className="testimonials bg-white py-8 md:pb-12 pt-4">
         <Testimonials />
       </div>
       <div className="newsletter bg-accent p-4 py-10">

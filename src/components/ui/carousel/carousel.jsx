@@ -1,10 +1,11 @@
 import { useState } from "react";
-import sterre from "./img_Sterre_wide.jpg";
-import woods from "./img_woods_wide.jpg";
-import mountains from "./img_mountains_wide.jpg";
+import cosmetic3 from "../../../assets/cosmetics/cosmetic (3).png";
+import cosmetic from "../../../assets/cosmetics/cosmetic.png";
+import cosmetic5 from "../../../assets/cosmetics/cosmetic (5).png";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-let images = [sterre, woods, mountains];
+let images = [cosmetic3, cosmetic, cosmetic5];
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,13 +28,23 @@ const Carousel = () => {
 
   return (
     <div className="carousel-container">
-      <div className="border border-red-500 relative text-white mb-3">
-        <button onClick={handlePrev} className="absolute bottom-1/2">
-          <ChevronLeft />
+      <div className=" mb-3">
+        <button
+          onClick={handlePrev}
+          className="absolute left-0 bottom-1/2 bg-white p-1 rounded-full shadow-md shadow-blue-100/50"
+        >
+          <ChevronLeft className="text-gray-400" />
         </button>
-        <img src={images[currentIndex]} alt={`slide ${currentIndex + 1}`} />
-        <button onClick={handleNext} className="absolute right-0 bottom-1/2">
-          <ChevronRight />
+        <img
+          src={images[currentIndex]}
+          alt={`slide ${currentIndex + 1}`}
+          className="object-cover max-h-[150px] sm:max-h-[200px] md:max-h-[230px]"
+        />
+        <button
+          onClick={handleNext}
+          className="absolute right-0 bottom-1/2 bg-white p-1 rounded-full shadow-md shadow-blue-100/50"
+        >
+          <ChevronRight className="text-gray-400" />
         </button>
       </div>
 
