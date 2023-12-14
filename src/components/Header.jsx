@@ -1,5 +1,4 @@
 import logo from "/logo.svg";
-import Sheet from "./ui/Sheet";
 import bagIcon from "../assets/bag.svg";
 // import { ShoppingBag } from "lucide-react";
 
@@ -11,14 +10,30 @@ function Logo() {
   );
 }
 
+function BagSVG() {
+  return (
+    <>
+      <img
+        src={bagIcon}
+        className="w-[18px] cursor-pointer"
+        alt="bag icon"
+        title="shop more"
+      />
+    </>
+  );
+}
+
 function Links() {
   return (
-    <div className="space-x-3 text-accent hidden md:block">
-      <a href="#" className="hover:underline">
-        Github
+    <div className="space-x-3 hidden md:block ">
+      <a href="#" className="header-link">
+        About
       </a>
-      <a href="#" className="hover:underline">
-        Socials
+      <a href="#" className="header-link">
+        Contact
+      </a>
+      <a href="#" className="header-link">
+        Services
       </a>
     </div>
   );
@@ -91,19 +106,23 @@ function MenuIcon() {
           </g>
         </svg>
       </div>
-      <Sheet />
     </div>
   );
 }
 
 export default function Header() {
   return (
-    <div className="wrapper container-4xl w-full ">
-      <div className="flex gap-x-3 items-center rounded bg-white/90 backdrop-blur-[40px] px-3 py-2 md:py-3 md:rounded-md">
+    <div className="wrapper container-4xl bg-white/[.9] backdrop-blur-sm shadow-md w-full rounded md:rounded-md">
+      <div className="flex gap-x-3 items-center px-3 py-2 md:py-3 ">
         <MenuIcon />
+        <div className="hidden md:block">
+          <BagSVG />
+        </div>
         <Logo />
         <Links />
-        <img src={bagIcon} className="w-[18px] md:hidden" alt="bag icon" />
+        <div className="md:hidden">
+          <BagSVG />
+        </div>
         {/* <ShoppingBag size={18} className=""/> */}
       </div>
     </div>

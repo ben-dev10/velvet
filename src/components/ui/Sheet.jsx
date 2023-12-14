@@ -1,4 +1,4 @@
-import { FolderGit2, MessagesSquare, PhoneCall, X } from "lucide-react";
+import { BadgeInfoIcon, MessagesSquare, PhoneCall, X } from "lucide-react";
 
 export default function Sheet() {
   function handleClose() {
@@ -8,7 +8,7 @@ export default function Sheet() {
   return (
     <div
       id="sheet"
-      className="absolute top-0 left-0 p-4 w-full h-[100vh] bg-white/90 hidden backdrop-blur-[10px]"
+      className="absolute top-[0px] left-0 p-4 px-6 w-full h-[100vh] bg-white/90 hidden backdrop-blur-[10px]"
     >
       <div className="flex mb-2">
         <X
@@ -20,15 +20,15 @@ export default function Sheet() {
       </div>
 
       <div className="mx-auto max-w-[350px] divide-y divide-primary">
-        <a href="#" className="py-3 hover:underline flex ">
-          <FolderGit2 size={14} className="mr-[6px]" />
-          Documentation
+        <a href="#" className="py-3 header-link flex ">
+          <BadgeInfoIcon size={14} className="mr-[6px]" />
+          About
         </a>
-        <a href="#" className="py-3 hover:underline flex ">
+        <a href="#" className="py-3 header-link flex ">
           <PhoneCall size={14} className="mr-[6px]" />
           Contact
         </a>
-        <a href="#" className="py-3 flex hover:underline">
+        <a href="#" className="py-3 header-link flex">
           <MessagesSquare size={14} className="mr-[6px]" />
           Services
         </a>

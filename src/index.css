@@ -92,3 +92,9 @@
 .footer-links {
   @apply hover:underline hover:opacity-90 px-1
 }
+
+@layer components {
+  .header-link {
+    @apply hover:underline hover:text-accent transition duration-[300ms]
+  }
+}

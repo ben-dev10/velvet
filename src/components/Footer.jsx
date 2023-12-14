@@ -19,7 +19,7 @@ function Copyright() {
 
 function Link({ text, className, children, url = "#" }) {
   return (
-    <a href={url} className={`${className} footer-links py-1`}>
+    <a href={url} className={`${className} footer-links text-white/70 py-1`}>
       {text}
       {children}
     </a>
@@ -50,7 +50,7 @@ function PC() {
         </div>
         <div className="pc-links gap-5 flex pt-[10px]">
           <div className="flex flex-col">
-            <p className="font-bold text-secondary">Services</p>
+            <p className="font-semibold">Services</p>
             <Link text="Product" />
             <Link text="Company" />
             <Link text="Social Media" className="flex items-center">
@@ -60,7 +60,7 @@ function PC() {
             <Link text="HeadQuarters" />
           </div>
           <div className="flex flex-col">
-            <p className="font-bold text-secondary">Marketing</p>
+            <p className="font-semibold">Marketing</p>
             <Link text="Showcase" className="flex items-center">
               <ExternalLink size={14} className="ml-[2px]" />
             </Link>
@@ -69,7 +69,7 @@ function PC() {
             <Link text="Shipping" />
           </div>
           <div className="flex flex-col">
-            <p className="font-bold text-secondary">Jobs & Offers</p>
+            <p className="font-semibold">Jobs & Offers</p>
             <Link text="Revenue" />
             <Link text="Legal" />
             <Link text="Status Report" className="flex items-center">
@@ -86,11 +86,26 @@ function PC() {
   );
 }
 
+function FooterMini() {
+  return (
+    <div className="container-4xl px-4 py-2">
+      <p className="text-center opacity-70">
+        Velvet Cosmetic Limited, HQ Accra Ghana
+      </p>
+    </div>
+  );
+}
+
 export default function Footer() {
   return (
-    <div className="wrapper container-4xl">
-      <Mobile />
-      <PC />
+    <div className="text-white bg-[#0F0A20]">
+      <div className="wrapper container-4xl p-4">
+        <Mobile />
+        <PC />
+      </div>
+      <div className="bg-black">
+        <FooterMini />
+      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { BarChart, BringToFront } from "lucide-react";
 
 function Hero() {
   return (
-    <div className="p-4 px-6 flex flex-col md:flex-row gap-3">
+    <div className="p-4 px-6 flex flex-col md:flex-row gap-3 mb-5">
       <div className="hero-texts my-3 order-1 md:order-none md:self-center">
         <p className="italic">best products for skin care</p>
         <h1 className="h1">Velvet Cosmetics Limited</h1>
@@ -28,10 +28,12 @@ function Hero() {
 
 function BrandsRow() {
   return (
-    <div className="brands flex justify-around bg-black p-4 px-5 text-white">
-      <p className="">Google</p>
-      <p className="">Microsoft</p>
-      <p className="">Apple</p>
+    <div className="brands bg-black">
+      <div className="wrapper container-4xl flex justify-around p-4 py-10 text-white">
+        <p className="">Google</p>
+        <p className="">Microsoft</p>
+        <p className="">Apple</p>
+      </div>
     </div>
   );
 }
@@ -53,7 +55,7 @@ function StatsIcon({ children, number, text }) {
 
 function Mission() {
   return (
-    <div className="wrapper p-4 px-6 pb-10 container-4xl">
+    <div className="wrapper p-4 px-6 py-10 container-4xl">
       <div className="mission-card bg-accent py-6 rounded-lg flex flex-col md:flex-row text-white">
         <div className="shrink-0">
           <h2 className="h2 mb-2 ">
@@ -94,7 +96,11 @@ function Card({ imgUrl, productName, description, price }) {
   return (
     <div className="card flex flex-col shrink-0 w-[200px] h-[280px] bg-white p-3 rounded-md">
       <div className="head mb-2">
-        <img src={imgUrl} alt="" className="w-full h-[150px] rounded-md" />
+        <img
+          src={imgUrl}
+          alt=""
+          className="w-full h-[150px] rounded-md object-cover"
+        />
       </div>
       <div className="body grow flex flex-col">
         <p className="text-[14px] font-bold">{productName}</p>
@@ -112,7 +118,7 @@ function Card({ imgUrl, productName, description, price }) {
 
 function Catalogue() {
   return (
-    <div className="catalogue flex flex-col items-center px-4 mt-[50px]">
+    <div className="catalogue flex flex-col items-center px-4 my-[50px]">
       <h2 className="h2 mb-3">Our Catalogue</h2>
       <div className="flex gap-4 max-w-full overflow-y-auto">
         <Card
@@ -132,11 +138,101 @@ function Catalogue() {
   );
 }
 
+// eslint-disable-next-line react/prop-types
+function MiniTestimonialCard({ userName, city, testimony, isSpecial = false }) {
+  return (
+    <div
+      className={`mini-testimonial-card shrink-0 border flex flex-col w-[180px] h-[150px] rounded-lg ${
+        isSpecial ? "bg-accent text-white" : " "
+      }`}
+    >
+      <div className="head flex items-center">
+        <img
+          src="user-img"
+          alt="testimonial-avatar"
+          className="w-[32px] h-[32px] rounded-full border m-2"
+        />
+        <div className="ml-2">
+          <p className="font-bold text-[13px]">{userName}</p>
+          <p className={`${isSpecial ? "text-sky-300" : "text-accent/70"}`}>
+            {city}
+          </p>
+        </div>
+      </div>
+
+      <div className="body p-2">
+        <p className={`${isSpecial ? "text-white/70" : "text-gray-500"}`}>
+          {testimony}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function Testimonials() {
+  return (
+    <div className="wrapper container-4xl p-5">
+      <div className="testimonials gap-4 flex flex-col items-center">
+        <h2 className="h2 text-center">What Our Customers Say</h2>
+
+        <div className="main-testimonial overflow-hidden max-w-[450px] h-[115px] border p-2 flex bg-white shadow-lg shadow-slate-100 rounded-md">
+          <div className="img">
+            <img src="" alt="" className="w-[120px] object-cover rounded-md" />
+          </div>
+          <div className="">
+            <h4 className="h4">Lucia</h4>
+            <p className="text-gray-500">
+              I was intrigued by the effectiveness of my Velvet creams. In just
+              2 weeks, my skin was cleared of most infections and I&apos;m back
+              to my smooth shiny face.
+            </p>
+          </div>
+        </div>
+
+        <div className="mini-testimonials flex gap-3 w-full overflow-x-auto px-3 mt-3">
+          <MiniTestimonialCard
+            userName="Leonardo Davinci"
+            city="New York"
+            testimony="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptate?"
+          />
+          <MiniTestimonialCard
+            isSpecial={true}
+            userName="Leonardo Davinci"
+            city="New York"
+            testimony="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptate?"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Newsletter() {
+  return (
+    <div className="wrapper container-4xl text-white md:flex md:justify-center md:items-center md:gap-5">
+      <div className="mb-3">
+        <h3 className="h3">Join Our Newsletter</h3>
+        <p className="opacity-70">
+          Get notified on new products from Velvet Cosmetics, twice weekly.
+        </p>
+      </div>
+      <div className="searchbar flex p-1 border rounded-md max-w-[400px] max-h-[36px]">
+        <input
+          type="text"
+          className="grow  p-1 outline-none bg-transparent placeholder:text-white/70"
+          placeholder="Email..."
+        />
+        <button className="text-black bg-white px-3 rounded">Join</button>
+      </div>
+    </div>
+  );
+}
+
 // function BrandsRow() {
 //   return (
 //     <div className=""></div>
-//   );
-// }
+//   );}
+//
 
 export default function Main() {
   return (
@@ -149,6 +245,12 @@ export default function Main() {
         <Mission />
       </div>
       <Catalogue />
+      <div className="testimonials bg-white">
+        <Testimonials />
+      </div>
+      <div className="newsletter bg-accent p-4 py-10">
+        <Newsletter />
+      </div>
     </>
   );
 }
