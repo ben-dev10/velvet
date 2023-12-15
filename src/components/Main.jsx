@@ -224,9 +224,7 @@ function Testimonials() {
             <h4 className="h4">Lucia</h4>
             <p className="text-gray-500">
               I was intrigued by the effectiveness of my Velvet creams. In just
-              2 weeks, my skin was cleared of most infections and I&apos;m back
-              to my smooth shiny face.
-            </p>
+              2 weeks, my skin was back to normal.
           </div>
         </div>
 
