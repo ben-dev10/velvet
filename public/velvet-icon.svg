@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M16 0L16 0L16 16L0 16L0 0L16 0Z" id="path_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" clip-rule="evenodd" fill-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="velvet-icon" clip-path="url(#clip_1)">
+    <path d="M16 0L16 0L16 16L0 16L0 0L16 0Z" id="velvet-icon" fill="none" stroke="none" />
+    <g id="velvet-icon" transform="translate(3 0)">
+      <g id="velvet">
+        <g id="velvet-logo">
+          <path
+            d="M10.7435 5.66288L10.7435 12.3929C10.7435 13.6644 9.71278 14.6951 8.44132 14.6951L2.30218 14.6951C1.67656 14.7031 1.07591 14.45 0.644608 13.9968C2.95819 13.4348 5.1047 12.33 6.90653 10.7737C8.53828 9.36595 9.84704 7.62267 10.7435 5.66289L10.7435 5.66288Z"
+            id="Shape" fill="#BFAFFB" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M10.7435 4.71898L10.7435 5.66288C9.84612 7.6199 8.53741 9.36049 6.90655 10.766C5.10548 12.325 2.95891 13.4325 0.644611 13.9968C0.23142 13.5681 0.000381656 12.996 0 12.4006L0 4.72666C4.57402e-08 4.30284 0.343574 3.95927 0.767393 3.95927L9.97611 3.95927C10.397 3.95924 10.7393 4.29816 10.7435 4.71898L10.7435 4.71898Z"
+            id="Shape" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M7.70013 0C8.14191 0 8.49994 0.358025 8.49994 0.799805L8.49994 1.4002C8.49994 1.84198 8.14191 2.2 7.70013 2.2L2.79974 2.2C2.35796 2.2 1.99994 1.84198 1.99994 1.4002L1.99994 0.799805C1.99994 0.358025 2.35796 0 2.79974 0L7.70013 0Z"
+            id="Rectangle" fill="#fff" stroke="none" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

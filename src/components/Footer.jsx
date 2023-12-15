@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { ExternalLink } from "lucide-react";
-import logo from "/logo.svg";
+import logo from "../assets/velvet-icon-group.svg";
 
 function Socials() {
   return (
@@ -47,8 +47,8 @@ function Socials() {
 function Copyright() {
   let year = new Date();
   return (
-    <div className="flex gap-2 py-2">
-      <img src={logo} alt="" />
+    <div className="flex gap-2 py-2 items-center">
+      <img src={logo} alt="" width="100px" />
       <div className="">Copyright &copy; {year.getFullYear()}</div>
       <div className="pl-2 border-l border-secondary">
         <a href="#" className="hover:underline">
@@ -134,7 +134,8 @@ function FooterMini() {
   return (
     <div className="container-4xl px-4 py-2">
       <p className="text-center opacity-70">
-        Velvet Cosmetic Limited, HQ Accra Ghana
+        <span className="text-cyan-400">Velvet Cosmetic Limited</span>, HQ Accra
+        Ghana
       </p>
     </div>
   );

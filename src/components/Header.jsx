@@ -1,10 +1,10 @@
-import logo from "/logo.svg";
+import logo from "../assets/velvet-icon.svg";
 import bagIcon from "../assets/bag.svg";
 // import { ShoppingBag } from "lucide-react";
 
 function Logo() {
   return (
-    <div className="mx-auto">
+    <div className="mx-auto md:translate-x-[25px]">
       <img src={logo} alt="vite logo" width="" />
     </div>
   );

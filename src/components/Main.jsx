@@ -1,5 +1,10 @@
 /* eslint-disable react/prop-types */
-import { ArrowUpRightIcon, BarChart, BringToFront, Network } from "lucide-react";
+import {
+  ArrowUpRightIcon,
+  BarChart,
+  BringToFront,
+  Network,
+} from "lucide-react";
 import Carousel from "./ui/carousel/carousel";
 import womanImg from "../assets/cosmetics/woman-cosmetic.png";
 import cosmetic1 from "../assets/cosmetics/cosmetic (1).png";
@@ -16,7 +21,7 @@ function Hero() {
   return (
     <div className="p-4 px-6 flex flex-col md:flex-row gap-3 mb-5">
       <div className="hero-texts my-3 order-1 md:order-none md:self-center">
-        <p className="italic">best products for skin care</p>
+        <p className="italic text-accent">best products for skin care</p>
         <h1 className="h1">Velvet Cosmetics Limited</h1>
         <p className="md:pr-8">
           We produce and sell an array of award-winning cosmetics for hair and
@@ -40,11 +45,11 @@ function Hero() {
 
 function BrandsRow() {
   return (
-    <div className="brands bg-black">
+    <div className="brands bg-black font-semibold text-[16px]">
       <div className="wrapper container-4xl flex justify-around p-4 py-10 text-white">
-        <p className="">Google</p>
-        <p className="">Microsoft</p>
-        <p className="">Apple</p>
+        <p className="">Rexona</p>
+        <p className="">Nivea</p>
+        <p className="">Dodo</p>
       </div>
     </div>
   );
