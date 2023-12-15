@@ -225,6 +225,7 @@ function Testimonials() {
             <p className="text-gray-500">
               I was intrigued by the effectiveness of my Velvet creams. In just
               2 weeks, my skin was back to normal.
+            </p>
           </div>
         </div>
 
