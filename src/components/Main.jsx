@@ -17,19 +17,27 @@ import lee from "../assets/avatars/lee.png";
 import simon from "../assets/avatars/simon.png";
 import steven from "../assets/avatars/steven.png";
 
+import { motion } from "framer-motion";
+
 function Hero() {
   return (
     <div className="p-4 px-6 flex flex-col md:flex-row gap-3 mb-5">
       <div className="hero-texts my-3 order-1 md:order-none md:self-center">
-        <p className="italic text-accent">best products for skin care</p>
-        <h1 className="h1">Velvet Cosmetics Limited</h1>
-        <p className="md:pr-8">
-          We produce and sell an array of award-winning cosmetics for hair and
-          skin.
-        </p>
-        <div className="mt-2">
+        <motion.div
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring" }}
+        >
+          <p className="italic text-accent">best products for skin care</p>
+          <h1 className="h1">Velvet Cosmetics Limited</h1>
+          <p className="md:pr-8">
+            We produce and sell an array of award-winning cosmetics for hair and
+            skin.
+          </p>
+        </motion.div>
+        <div className="mt-4">
           <a href="#" className="">
-            <button className="flex items-center px-3 py-[6px] rounded-full bg-accent text-white">
+            <button className="flex items-center px-3 py-[6px] rounded-full bg-accent text-white active:scale-[0.9] duration-300 hover:bg-[hsl(253,51%,45%)]">
               Learn more <ArrowUpRightIcon size={14} className="ml-1" />
             </button>
           </a>
@@ -127,7 +135,7 @@ function Card({ imgUrl, productName, description, price }) {
         <p className="text-gray-500">{description}</p>
         <div className="flex mt-auto">
           <div className="price font-bold mr-auto text-[13px]">{price}</div>
-          <button className="bg-accent text-blue-50 px-4 py-[3px] rounded-full">
+          <button className="bg-accent text-blue-50 px-4 py-[3px] rounded-full hover:bg-[hsl(253,51%,45%)]">
             Buy
           </button>
         </div>
@@ -179,6 +187,7 @@ function MiniTestimonialCard({
 }) {
   return (
     <div
+      data-aos="fade-up"
       className={`mini-testimonial-card shrink-0 border pt-2 flex flex-col w-[180px] h-[150px] rounded-lg ${
         isSpecial ? "bg-accent text-white" : " "
       }`}
@@ -212,7 +221,10 @@ function Testimonials() {
       <div className="testimonials gap-4 flex flex-col items-center">
         <h2 className="h2 text-center">What Our Customers Say</h2>
 
-        <div className="main-testimonial overflow-hidden max-w-[450px] h-[135px] border p-2 flex bg-white shadow-lg shadow-slate-100 rounded-md">
+        <div
+          data-aos="fade-up"
+          className="main-testimonial overflow-hidden max-w-[450px] h-[135px] border p-2 flex bg-white shadow-lg shadow-slate-100 rounded-md"
+        >
           <div className="img shrink-0 h-[100%] mr-4">
             <img
               src={lucia}
@@ -229,7 +241,7 @@ function Testimonials() {
           </div>
         </div>
 
-        <div className="mini-testimonials flex gap-3 w-full overflow-x-auto px-3 mt-3">
+        <div className="mini-testimonials flex gap-3 w-full overflow-x-auto overflow-y-hidden px-3 mt-3">
           <MiniTestimonialCard
             url={lee}
             userName="Leonardo Davinci"
