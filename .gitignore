@@ -9,8 +9,6 @@ lerna-debug.log*
 
 node_modules
 src/archive/*
-src/archive/carousel-old.jsx
-src/archive/carousel.css
 dist
 dist-ssr
 *.local

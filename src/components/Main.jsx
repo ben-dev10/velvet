@@ -3,6 +3,7 @@ import {
   ArrowUpRightIcon,
   BarChart,
   BringToFront,
+  Mail,
   Network,
 } from "lucide-react";
 import Carousel from "./ui/carousel/carousel";
@@ -275,14 +276,14 @@ function Testimonials() {
 
 function Newsletter() {
   return (
-    <div className="wrapper container-4xl text-white md:flex md:justify-center md:items-center md:gap-5">
+    <div className="relative wrapper container-4xl text-white md:flex md:justify-center md:items-center md:gap-5">
       <div className="mb-3">
         <h3 className="h3">Join Our Newsletter</h3>
         <p className="opacity-70">
           Get notified on new products from Velvet Cosmetics, twice weekly.
         </p>
       </div>
-      <div className="searchbar flex p-1 border rounded-md max-w-[400px] max-h-[36px]">
+      <div className="search-bar flex p-1 border rounded-md max-w-[400px] max-h-[36px]">
         <input
           type="text"
           className="grow  p-1 outline-none bg-transparent placeholder:text-white/70"
@@ -290,9 +291,17 @@ function Newsletter() {
         />
         <button className="text-black bg-white px-3 rounded">Join</button>
       </div>
+
+      <div className="absolute z-[1] -top-10 right-0 rotate-[30deg]">
+        <Mail size={100} className="opacity-20" />
+      </div>
+      <div className="absolute hidden md:block z-[1] -bottom-10 left-0 rotate-[-20deg]">
+        <Mail size={60} className="opacity-20" />
+      </div>
     </div>
   );
 }
+
 export default function Main() {
   return (
     <>
@@ -307,7 +316,7 @@ export default function Main() {
       <div className="testimonials bg-white py-8 md:pb-12 pt-4">
         <Testimonials />
       </div>
-      <div className="newsletter bg-accent p-4 py-10">
+      <div className="newsletter  overflow-hidden bg-accent p-4 py-10">
         <Newsletter />
       </div>
     </>

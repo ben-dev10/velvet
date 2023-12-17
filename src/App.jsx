@@ -2,6 +2,11 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Sheet from "./components/ui/Sheet";
+import AOS from "aos";
+
+AOS.init({
+  easing: "ease-in-out-sine",
+});
 
 function App() {
   return (
