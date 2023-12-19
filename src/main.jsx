@@ -9,6 +9,7 @@ import {
 import Root from "./routes/root";
 import ErrorPage from "./routes/error-page";
 import About from "./routes/About";
+import Services from "./routes/Services";
 import Main from "./components/Main";
 import "./index.css";
 
@@ -18,7 +19,7 @@ const router = createBrowserRouter(
       <Route errorElement={<ErrorPage />}>
         <Route index element={<Main />} />
         <Route path="about/" element={<About />} />
-        {/* <Route path="services/" element={<EditContact />} /> */}
+        <Route path="services/" element={<Services />} />
         {/* <Route path="contact/" element={<Contact />} /> */}
       </Route>
     </Route>

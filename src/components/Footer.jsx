@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { ExternalLink } from "lucide-react";
 import logo from "../assets/velvet-icon-group.svg";
+import { Link } from "react-router-dom";
 
 function Socials() {
   return (
@@ -48,7 +49,9 @@ function Copyright() {
   let year = new Date();
   return (
     <div className="flex gap-2 py-2 items-center">
-      <img src={logo} alt="" width="100px" />
+      <Link to={`/`} title="Go to homepage">
+        <img src={logo} alt="" width="100px" />
+      </Link>
       <div className="">Copyright &copy; {year.getFullYear()}</div>
       <div className="pl-2 border-l border-secondary">
         <a href="#" className="hover:underline">
@@ -59,7 +62,7 @@ function Copyright() {
   );
 }
 
-function Link({ text, className, children, url = "#" }) {
+function FooterLink({ text, className, children, url = "#" }) {
   return (
     <a href={url} className={`${className} footer-links text-white/70 py-1`}>
       {text}
@@ -73,11 +76,11 @@ function Mobile() {
     <div className="mobile md:hidden pb-[70px]">
       <Copyright />
       <div className="mobile-links flex flex-col px-3">
-        <Link text="Product" />
-        <Link text="Company" />
-        <Link text="Social Media" className="flex items-center">
+        <FooterLink text="Product" />
+        <FooterLink text="Company" />
+        <FooterLink text="Social Media" className="flex items-center">
           <ExternalLink size={14} className="ml-[2px]" />
-        </Link>
+        </FooterLink>
       </div>
       <Socials />
     </div>
@@ -95,34 +98,34 @@ function PC() {
         <div className="pc-links gap-5 flex pt-[10px]">
           <div className="flex flex-col">
             <p className="font-semibold">Services</p>
-            <Link text="Product" />
-            <Link text="Company" />
-            <Link text="Social Media" className="flex items-center">
+            <FooterLink text="Product" />
+            <FooterLink text="Company" />
+            <FooterLink text="Social Media" className="flex items-center">
               <ExternalLink size={14} className="ml-[2px]" />
-            </Link>
-            <Link text="Offices" />
-            <Link text="HeadQuarters" />
+            </FooterLink>
+            <FooterLink text="Offices" />
+            <FooterLink text="HeadQuarters" />
           </div>
           <div className="flex flex-col">
             <p className="font-semibold">Marketing</p>
-            <Link text="Showcase" className="flex items-center">
+            <FooterLink text="Showcase" className="flex items-center">
               <ExternalLink size={14} className="ml-[2px]" />
-            </Link>
-            <Link text="Learn" />
-            <Link text="Academy" />
-            <Link text="Shipping" />
+            </FooterLink>
+            <FooterLink text="Learn" />
+            <FooterLink text="Academy" />
+            <FooterLink text="Shipping" />
           </div>
           <div className="flex flex-col">
             <p className="font-semibold">Jobs & Offers</p>
-            <Link text="Revenue" />
-            <Link text="Legal" />
-            <Link text="Status Report" className="flex items-center">
+            <FooterLink text="Revenue" />
+            <FooterLink text="Legal" />
+            <FooterLink text="Status Report" className="flex items-center">
               <ExternalLink size={14} className="ml-[2px]" />
-            </Link>
-            <Link text="Hiring" />
-            <Link text="China" />
-            <Link text="UK" />
-            <Link text="USA" />
+            </FooterLink>
+            <FooterLink text="Hiring" />
+            <FooterLink text="China" />
+            <FooterLink text="UK" />
+            <FooterLink text="USA" />
           </div>
         </div>
       </div>

@@ -29,11 +29,15 @@ export default function Sheet() {
           <BadgeInfoIcon size={14} className="mr-[6px]" />
           About
         </Link>
-        <Link to={`#`} className="header-link flex py-3">
+        {/* <Link to={`#`} className="header-link flex py-3">
           <PhoneCall size={14} className="mr-[6px]" />
           Contact
-        </Link>
-        <Link to={`#`} className="header-link flex py-3">
+        </Link> */}
+        <Link
+          to={`/Services/`}
+          className="header-link flex py-3"
+          onClick={handleClose}
+        >
           <MessagesSquare size={14} className="mr-[6px]" />
           Services
         </Link>
