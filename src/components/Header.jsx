@@ -1,11 +1,13 @@
 import logo from "../assets/velvet-icon.svg";
 import bagIcon from "../assets/bag.svg";
-// import { ShoppingBag } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
 
 function Logo() {
   return (
     <div className="mx-auto md:translate-x-[25px]">
-      <img src={logo} alt="vite logo" width="" />
+      <Link to={`/`} title="Go to homepage">
+        <img src={logo} alt="vite logo" width="" />
+      </Link>
     </div>
   );
 }
@@ -26,15 +28,38 @@ function BagSVG() {
 function Links() {
   return (
     <div className="space-x-3 hidden md:block ">
-      <a href="#" className="header-link">
+      <NavLink
+        to={`/About/`}
+        className={({ isActive, isPending }) =>
+          isActive
+            ? "border-b-2 border-accent text-accent"
+            : isPending
+            ? "pending"
+            : "header-link"
+        }
+      >
         About
-      </a>
-      <a href="#" className="header-link">
-        Contact
-      </a>
-      <a href="#" className="header-link">
+      </NavLink>
+
+      <NavLink
+        to={`/Services/`}
+        className={({ isActive, isPending }) =>
+          isActive
+            ? "border-b-2 border-accent text-accent"
+            : isPending
+            ? "pending"
+            : "header-link"
+        }
+      >
         Services
-      </a>
+      </NavLink>
+
+      {/* <Link to={`/About/`} className="header-link">
+        About
+      </Link>
+      <Link to={`/Services/`} className="header-link">
+        Services
+      </Link> */}
     </div>
   );
 }
@@ -123,7 +148,6 @@ export default function Header() {
         <div className="md:hidden">
           <BagSVG />
         </div>
-        {/* <ShoppingBag size={18} className=""/> */}
       </div>
     </div>
   );

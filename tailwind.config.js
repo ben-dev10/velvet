@@ -27,6 +27,7 @@ export default {
       },
       borderColor: {
         primary: "var(--border-primary)",
+        accent: "#5E43C2",
         secondary: "var(--border-secondary)",
       },
       fontSize: {

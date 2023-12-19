@@ -97,6 +97,6 @@
 
 @layer components {
   .header-link {
-    @apply hover:underline hover:text-accent transition duration-[300ms]
+    @apply hover:text-accent transition duration-[300ms]
   }
 }
