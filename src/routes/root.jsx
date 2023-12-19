@@ -16,7 +16,7 @@ export default function Root() {
         <Header />
         <Sheet />
       </header>
-      <main className="">
+      <main className="main">
         <div id="detail">
           <Outlet>
             <Main />
