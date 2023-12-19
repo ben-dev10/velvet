@@ -1,6 +1,6 @@
 import logo from "../assets/velvet-icon.svg";
 import bagIcon from "../assets/bag.svg";
-// import { ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Logo() {
   return (
@@ -26,15 +26,15 @@ function BagSVG() {
 function Links() {
   return (
     <div className="space-x-3 hidden md:block ">
-      <a href="#" className="header-link">
+      <Link to={`/About/`} className="header-link">
         About
-      </a>
-      <a href="#" className="header-link">
+      </Link>
+      <Link to={`#`} className="header-link">
         Contact
-      </a>
-      <a href="#" className="header-link">
+      </Link>
+      <Link to={`#`} className="header-link">
         Services
-      </a>
+      </Link>
     </div>
   );
 }

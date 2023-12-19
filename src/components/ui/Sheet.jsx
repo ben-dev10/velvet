@@ -1,4 +1,5 @@
 import { BadgeInfoIcon, MessagesSquare, PhoneCall, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Sheet() {
   function handleClose() {
@@ -20,18 +21,22 @@ export default function Sheet() {
       </div>
 
       <div className="mx-auto max-w-[350px] divide-y divide-primary">
-        <a href="#" className="py-3 header-link flex ">
+        <Link
+          to={`/About/`}
+          className="header-link flex py-3"
+          onClick={handleClose}
+        >
           <BadgeInfoIcon size={14} className="mr-[6px]" />
           About
-        </a>
-        <a href="#" className="py-3 header-link flex ">
+        </Link>
+        <Link to={`#`} className="header-link flex py-3">
           <PhoneCall size={14} className="mr-[6px]" />
           Contact
-        </a>
-        <a href="#" className="py-3 header-link flex">
+        </Link>
+        <Link to={`#`} className="header-link flex py-3">
           <MessagesSquare size={14} className="mr-[6px]" />
           Services
-        </a>
+        </Link>
       </div>
     </div>
   );
