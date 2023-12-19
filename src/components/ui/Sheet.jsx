@@ -29,10 +29,6 @@ export default function Sheet() {
           <BadgeInfoIcon size={14} className="mr-[6px]" />
           About
         </Link>
-        {/* <Link to={`#`} className="header-link flex py-3">
-          <PhoneCall size={14} className="mr-[6px]" />
-          Contact
-        </Link> */}
         <Link
           to={`/Services/`}
           className="header-link flex py-3"
@@ -40,6 +36,14 @@ export default function Sheet() {
         >
           <MessagesSquare size={14} className="mr-[6px]" />
           Services
+        </Link>
+        <Link
+          to={``}
+          className="disabled text-gray-400 flex py-3 cursor-default"
+          title="coming soon"
+        >
+          <PhoneCall size={14} className="mr-[6px]" />
+          Contact
         </Link>
       </div>
     </div>

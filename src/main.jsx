@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {
-  createBrowserRouter,
   RouterProvider,
   createRoutesFromElements,
   Route,
+  createHashRouter,
 } from "react-router-dom";
 import Root from "./routes/root";
 import ErrorPage from "./routes/error-page";
@@ -13,7 +13,7 @@ import Services from "./routes/Services";
 import Main from "./components/Main";
 import "./index.css";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
       <Route errorElement={<ErrorPage />}>
