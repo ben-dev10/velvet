@@ -5,6 +5,7 @@ import {
   BringToFront,
   Mail,
   Network,
+  ChevronRight,
 } from "lucide-react";
 import Carousel from "./ui/carousel/carousel";
 import womanImg from "../assets/cosmetics/woman-cosmetic.png";
@@ -17,25 +18,58 @@ import rauch from "../assets/avatars/rauch.png";
 import lee from "../assets/avatars/lee.png";
 import simon from "../assets/avatars/simon.png";
 import steven from "../assets/avatars/steven.png";
+import BadgeUI from "./ui/BadgeUI";
 
 import { motion } from "framer-motion";
+
+const slideInVariant1 = {
+  initial: { y: -10, opacity: 0 },
+  final: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+    },
+  },
+};
+
+const slideInVariant2 = {
+  initial: { y: -10, opacity: 0 },
+  final: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      delay: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
 
 function Hero() {
   return (
     <div className="p-4 px-6 flex flex-col md:flex-row gap-3 mb-5">
       <div className="hero-texts my-3 order-1 md:order-none md:self-center">
-        <motion.div
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ type: "spring" }}
-        >
-          <p className="italic text-accent">best products for skin care</p>
-          <h1 className="h1">Velvet Cosmetics Limited</h1>
-          <p className="md:pr-8">
+        <div>
+          <p className="italic text-accent font-sans">best products for skin care</p>
+          <motion.h1
+            className="h1"
+            variants={slideInVariant1}
+            initial="initial"
+            animate="final"
+          >
+            Velvet Cosmetics Limited
+          </motion.h1>
+          <motion.p
+            className="md:pr-8"
+            variants={slideInVariant2}
+            initial="initial"
+            animate="final"
+          >
             We produce and sell an array of award-winning cosmetics for hair and
             skin.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
         <div className="mt-4">
           <a href="#" className="">
             <button className="flex items-center px-3 py-[6px] rounded-full bg-accent text-white active:scale-[0.9] duration-300 hover:bg-[hsl(253,51%,45%)]">
@@ -55,10 +89,17 @@ function Hero() {
 function BrandsRow() {
   return (
     <div className="brands bg-black font-semibold text-[16px]">
-      <div className="wrapper container-4xl flex justify-around p-4 py-10 text-white">
-        <p className="">Rexona</p>
-        <p className="">Nivea</p>
-        <p className="">Dodo</p>
+      <div className="wrapper container-4xl p-4 pb-12 pt-5 text-white">
+        <div className="my-2 flex justify-around mb-6">
+          <BadgeUI text="Our Partners" accent="accent-dark">
+            <ChevronRight size={14} className="ml-[2px]" />
+          </BadgeUI>
+        </div>
+        <div className="flex justify-around">
+          <p className="">Rexona</p>
+          <p className="">Nivea</p>
+          <p className="">Dodo</p>
+        </div>
       </div>
     </div>
   );
@@ -149,7 +190,7 @@ function Catalogue() {
   return (
     <div className="catalogue flex flex-col items-center px-4 my-[25px] mb-[50px]">
       <h2 className="h2 mb-3">Our Catalogue</h2>
-      <div className="flex gap-4 max-w-full overflow-y-auto">
+      <div className="flex gap-4 max-w-full overflow-y-auto" data-aos="fade-up">
         <Card
           imgUrl={cosmetic1}
           productName="Velvet Crisp"

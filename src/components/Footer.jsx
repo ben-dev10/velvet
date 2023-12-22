@@ -137,8 +137,8 @@ function FooterMini() {
   return (
     <div className="container-4xl px-4 py-2">
       <p className="text-center opacity-70">
-        <span className="text-cyan-400">Velvet Cosmetic Limited</span>, HQ Accra
-        Ghana
+        <span className="text-[#A18AFB]">Velvet Cosmetic Limited</span>, HQ
+        Accra Ghana
       </p>
     </div>
   );
