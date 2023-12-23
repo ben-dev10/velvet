@@ -9,10 +9,7 @@ import {
 } from "lucide-react";
 import Carousel from "./ui/carousel/carousel";
 import womanImg from "../assets/cosmetics/woman-cosmetic.png";
-import cosmetic1 from "../assets/cosmetics/cosmetic (1).png";
-import cosmetic2 from "../assets/cosmetics/cosmetic (2).png";
-import cosmetic4 from "../assets/cosmetics/cosmetic (4).png";
-import cosmetic6 from "../assets/cosmetics/cosmetic (6).png";
+import products from "../data/products.json";
 import lucia from "../assets/cosmetics/natural-beauty.png";
 import rauch from "../assets/avatars/rauch.png";
 import lee from "../assets/avatars/lee.png";
@@ -21,6 +18,7 @@ import steven from "../assets/avatars/steven.png";
 import BadgeUI from "./ui/BadgeUI";
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const slideInVariant1 = {
   initial: { y: -10, opacity: 0 },
@@ -51,7 +49,9 @@ function Hero() {
     <div className="p-4 px-6 flex flex-col md:flex-row gap-3 mb-5">
       <div className="hero-texts my-3 order-1 md:order-none md:self-center">
         <div>
-          <p className="italic text-accent font-sans">best products for skin care</p>
+          <p className="italic text-accent font-sans">
+            best products for skin care
+          </p>
           <motion.h1
             className="h1"
             variants={slideInVariant1}
@@ -177,9 +177,12 @@ function Card({ imgUrl, productName, description, price }) {
         <p className="text-gray-500">{description}</p>
         <div className="flex mt-auto">
           <div className="price font-bold mr-auto text-[13px]">{price}</div>
-          <button className="bg-accent text-blue-50 px-4 py-[3px] rounded-full hover:bg-[hsl(253,51%,45%)]">
-            Buy
-          </button>
+
+          <Link to={`/product/${productName}`}>
+            <button className="bg-accent text-blue-50 px-4 py-[3px] rounded-full hover:bg-[hsl(253,51%,45%)]">
+              Buy
+            </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -191,30 +194,25 @@ function Catalogue() {
     <div className="catalogue flex flex-col items-center px-4 my-[25px] mb-[50px]">
       <h2 className="h2 mb-3">Our Catalogue</h2>
       <div className="flex gap-4 max-w-full overflow-y-auto" data-aos="fade-up">
-        <Card
-          imgUrl={cosmetic1}
-          productName="Velvet Crisp"
-          description="Our best-selling spray. Suitable for ladies & gents."
-          price="140$"
-        />
-        <Card
-          imgUrl={cosmetic2}
-          productName="Velvet Luxure"
-          description="Simple yet elegant."
-          price="120$"
-        />
-        <Card
-          imgUrl={cosmetic4}
-          productName="Alastin Skincare"
-          description="Our least expensive, but don't be fooled!"
-          price="50$"
-        />
-        <Card
-          imgUrl={cosmetic6}
-          productName="Rejuvity"
-          description="A pack of premium goodness for smooth skin"
-          price="250$"
-        />
+        {products.map((product) => (
+          <Card
+            key={product.id}
+            productName={product.productName}
+            description={product.description}
+            price={product.price}
+            imgUrl={product.imgUrl}
+          />
+        ))}
+      </div>
+      <div>
+        <div className="mt-10">
+          <Link
+            to={"products/all-products"}
+            className="text-accent hover:underline font-bold"
+          >
+            See all products &rarr;
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 export default function BadgeUI({ text, accent, size = 12, children }) {
   const accentVariants = {
     accent: "border-accent/50 text-accent",
-    "accent-dark": "border-accent/70 text-[#A18AFB]",
+    "accent-dark": "border-accent/80 text-[#A18AFB]",
     white: "border-white/50 text-white",
   };
 
