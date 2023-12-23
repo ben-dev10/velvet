@@ -4,35 +4,35 @@
     "productName": "Velvet Crisp",
     "description": "Our best-selling spray. Suitable for ladies & gents.",
     "price": "140$",
-    "imgUrl": "./src/assets/cosmetics/cosmetic (1).png",
-    "stars":2,
-    "stars-img": "./src/assets/stars/2-stars.svg"
+    "imgUrl": "cosmetics/cosmetic (1).png",
+    "stars": 2,
+    "stars-img": "stars/2-stars.svg"
   },
   {
     "id": 2,
     "productName": "Velvet Luxure",
     "description": "Simple yet elegant.",
     "price": "120$",
-    "imgUrl": "./src/assets/cosmetics/cosmetic (2).png",
+    "imgUrl": "cosmetics/cosmetic (2).png",
     "stars": 4,
-    "stars-img": "./src/assets/stars/4-stars.svg"
+    "stars-img": "stars/4-stars.svg"
   },
   {
     "id": 3,
     "productName": "Alastin Skincare",
     "description": "Our least expensive, but don't be fooled!",
     "price": "50$",
-    "imgUrl": "./src/assets/cosmetics/cosmetic (4).png",
+    "imgUrl": "cosmetics/cosmetic (4).png",
     "stars": "4-1/2",
-    "stars-img": "./src/assets/stars/4-12-stars.svg"
+    "stars-img": "stars/4-12-stars.svg"
   },
   {
     "id": 4,
     "productName": "Rejuvity",
     "description": "A pack of premium goodness for smooth skin.",
     "price": "250$",
-    "imgUrl": "./src/assets/cosmetics/cosmetic (6).png",
+    "imgUrl": "cosmetics/cosmetic (6).png",
     "stars": 3,
-    "stars-img": "./src/assets/stars/3-stars.svg"
+    "stars-img": "stars/3-stars.svg"
   }
 ]

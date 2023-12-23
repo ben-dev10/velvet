@@ -21,7 +21,6 @@ export default function ProductDetail({
             <h2 className="h2">{productName}</h2>
             <p className="text-gray-500">{description}</p>
             <p className="text-accent font-bold mt-2">
-              {" "}
               <span className="text-black">Price:</span> {price}
             </p>
 
