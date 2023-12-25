@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 src/archive/*
+src/components/ui/toast-ui.jsx
 dist
 dist-ssr
 *.local

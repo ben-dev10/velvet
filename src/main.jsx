@@ -42,8 +42,6 @@ const router = createHashRouter(
             }
           />
         ))}
-
-        {/* <Route path="contact/" element={<Contact />} /> */}
       </Route>
     </Route>
   )

@@ -6,7 +6,11 @@
     "price": "140$",
     "imgUrl": "cosmetics/cosmetic (1).png",
     "stars": 2,
-    "stars-img": "stars/2-stars.svg"
+    "stars-img": "stars/2-stars.svg",
+    "categories": [
+      { "type": "skin", "badge": "gray" },
+      { "type": "face", "badge": "accent" }
+    ]
   },
   {
     "id": 2,
@@ -15,7 +19,11 @@
     "price": "120$",
     "imgUrl": "cosmetics/cosmetic (2).png",
     "stars": 4,
-    "stars-img": "stars/4-stars.svg"
+    "stars-img": "stars/4-stars.svg",
+    "categories": [
+      { "type": "body", "badge": "blue" },
+      { "type": "men", "badge": "accent" }
+    ]
   },
   {
     "id": 3,
@@ -24,7 +32,12 @@
     "price": "50$",
     "imgUrl": "cosmetics/cosmetic (4).png",
     "stars": "4-1/2",
-    "stars-img": "stars/4-12-stars.svg"
+    "stars-img": "stars/4-12-stars.svg",
+    "categories": [
+      { "type": "hands", "badge": "gray" },
+      { "type": "men", "badge": "accent" },
+      { "type": "ladies", "badge": "green" }
+    ]
   },
   {
     "id": 4,
@@ -33,6 +46,10 @@
     "price": "250$",
     "imgUrl": "cosmetics/cosmetic (6).png",
     "stars": 3,
-    "stars-img": "stars/3-stars.svg"
+    "stars-img": "stars/3-stars.svg",
+    "categories": [
+      { "type": "body", "badge": "blue" },
+      { "type": "men", "badge": "accent" }
+    ]
   }
 ]

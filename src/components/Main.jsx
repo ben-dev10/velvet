@@ -71,11 +71,11 @@ function Hero() {
           </motion.p>
         </div>
         <div className="mt-4">
-          <a href="#" className="">
+          <Link to={"/products/all-products"} className="">
             <button className="flex items-center px-3 py-[6px] rounded-full bg-accent text-white active:scale-[0.9] duration-300 hover:bg-[hsl(253,51%,45%)]">
               Learn more <ArrowUpRightIcon size={14} className="ml-1" />
             </button>
-          </a>
+          </Link>
         </div>
       </div>
 

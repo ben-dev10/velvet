@@ -1,11 +1,20 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import products from "../../data/products.json";
-import { Info } from "lucide-react";
+import { CircleDot, Info } from "lucide-react";
 
-function ProductCard({ imgUrl, description, productName, price,starImg }) {
+import BadgeUI from "../ui/BadgeUI";
+
+function ProductCard({
+  imgUrl,
+  description,
+  productName,
+  price,
+  starImg,
+  badgeList,
+}) {
   return (
-    <div className="product-card w-full bg-white rounded-lg border-2 p-4 hover:border-accent/50">
+    <div className="product-card group relative w-full bg-white rounded-lg border-[1.5px] md:border-2 p-4 hover:border-accent/50">
       <Link to={`/product/${productName}`} className="flex gap-3">
         <img
           src={imgUrl}
@@ -16,10 +25,20 @@ function ProductCard({ imgUrl, description, productName, price,starImg }) {
           <h3 className="h3">{productName}</h3>
           <p className="text-gray-500">{description}</p>
           <div className="flex gap-3 items-center mt-3">
-            <p className="text-accent">{price}</p>
+            <p className="text-accent font-bold">{price}</p>
             <img src={starImg} alt="star-rating" className="h-[12px]" />
           </div>
+          <div className="badges flex gap-1 flex-wrap mt-2">
+            {badgeList.map((badge, index) => (
+              <BadgeUI key={index} text={badge.type} accent={badge.badge} />
+            ))}
+          </div>
         </div>
+
+        <CircleDot
+          className="absolute right-2 top-2 text-accent hidden group-hover:block"
+          size={13}
+        />
       </Link>
     </div>
   );
@@ -43,6 +62,7 @@ export default function AllProductsPage() {
               productName={product.productName}
               price={product.price}
               starImg={product["stars-img"]}
+              badgeList={product.categories}
             />
           ))}
         </div>

@@ -83,7 +83,7 @@ const inputStyles = {
   outline: "0px",
   fontSize: 12,
   color: "#1D0281",
-  backgroundColor: "#e5e7eb",
+  backgroundColor: "#e5e7eb !important",
   boxShadow: "0 0 0 1px rgba(94,67,194,.5)",
   "&:hover": { boxShadow: `0 0 0 1px rgba(94,67,194,.9)` },
   "&:focus": { boxShadow: `0 0 0 2.5px rgba(94,67,194,.4)` },

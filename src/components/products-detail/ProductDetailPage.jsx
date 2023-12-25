@@ -9,7 +9,7 @@ export default function ProductDetail({
   imgUrl,
 }) {
   return (
-    <div className="products-detail-page p-4 min-h-[80vh]">
+    <div className="products-detail-page p-4 min-h-[70vh]">
       <div className="wrapper p-2 container-4xl">
         <div className="flex gap-5">
           <img
